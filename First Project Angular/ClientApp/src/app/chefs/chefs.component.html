@@ -1,0 +1,7 @@
+<h2>Current Signup Sheet</h2>
+<ul class="chefs">
+  <li *ngFor="let chef of chefs">
+    <span class="badge">{{chef.month}}/{{chef.day}}/{{chef.year}}</span> {{chef.firstName}} {{chef.lastName}}
+  </li>
+</ul>
+
