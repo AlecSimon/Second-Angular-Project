@@ -45,3 +45,10 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+.chefs button {
+  border-color: black;
+  background-color: #333333;
+  color: white;
+  font-size: small;
+  border-radius: 4px 4px 4px 4px;
+}

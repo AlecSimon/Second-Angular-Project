@@ -1,6 +1,15 @@
+<html>
+
 <h2>Current Signup Sheet</h2>
-<ul class="chefs">
-  <li *ngFor="let chef of chefs">
-    <span class="badge">{{chef.month}}/{{chef.day}}/{{chef.year}}</span> {{chef.firstName}} {{chef.lastName}}
+<ul class="chefs" *ngFor="let chef of chefs">
+  <li>
+    <span class="badge">{{chef.month}}/{{chef.day}}/{{chef.year}}</span> {{chef.firstName}} {{chef.lastName}}<button type="button"onclick="alert('html is hard lul')">Remove Entry</button>
   </li>
 </ul>
+
+<script>
+function functionA() {
+  window.print();
+}
+</script>
+</html>
