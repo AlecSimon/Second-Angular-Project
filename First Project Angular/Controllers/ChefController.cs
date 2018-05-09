@@ -12,9 +12,6 @@ namespace First_Project_Angular.Controllers
     public class ChefController : Controller
     {
         [HttpGet]
-        public IActionResult Test()
-        {
-            return Ok("Hello");
-        }
+        public IActionResult Test() => Ok("Hello");
     }
 }
