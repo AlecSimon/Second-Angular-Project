@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chef } from '../chef';
-import { CHEFS } from '../mock-chefs';
+import { ChefService } from '../chef.service';
 
 @Component({
   selector: 'app-chefs',
@@ -9,12 +9,16 @@ import { CHEFS } from '../mock-chefs';
 })
 export class ChefsComponent implements OnInit {
 
-  chefs = CHEFS;
+  chefs: Chef[]
 
-  constructor() { }
+  constructor(private chefService: ChefService) { }
 
   ngOnInit() {
+    this.getChefs();
   }
 
+  getChefs(): void {
+    this.chefs = this.chefService.getChefs();
+  }
 
 }
