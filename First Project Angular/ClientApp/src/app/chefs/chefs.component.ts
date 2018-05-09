@@ -13,6 +13,8 @@ export class ChefsComponent implements OnInit {
 
   selectedChef: Chef;
 
+  addChef: false;
+
   constructor(private chefService: ChefService) { }
 
   ngOnInit() {
@@ -27,5 +29,6 @@ export class ChefsComponent implements OnInit {
   onSelect(chef: Chef): void {
     this.selectedChef = chef;
   }
+
 
 }

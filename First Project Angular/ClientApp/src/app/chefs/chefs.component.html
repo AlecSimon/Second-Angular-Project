@@ -1,23 +1,34 @@
-<h2>Current Signup Sheet <button type="button">Add Entry</button></h2>
+<h2>Current Signup Sheet:</h2>
 <ul class="chefs" *ngFor="let chef of chefs">
   <li>
     <span class="badge">{{chef.month}}/{{chef.day}}/{{chef.year}}</span> {{chef.firstName}} {{chef.lastName}} <button type="button" [class.selected]="chef === selectedChef"
-    (click)="onSelect(chef)">Remove Entry</button>
+    (click)="onSelect(chef)" (click)="addChef = false">Remove Entry</button>
   </li>
 </ul>
 
-<div *ngIf="selectedChef">
+<h2><button type="button" (click)="addChef = true" (click)="selectedChef = false"> Add Entry</button></h2>
+
+<div *ngIf="addChef">
  
-  <h2>{{ selectedChef.firstName }} {{ selectedChef.lastName }} Details</h2>
+  <h2>Add a Chef</h2>
   <div>
     <form action="./mock-chefs.ts">
-      First Name: <input type="text" name = "firstName" placeholder="Wind"/>
-      Last Name:  <input type="text" name = "lastName" placeholder="Storm"/>
-      Month:      <input type="text" name = "month" placeholder="3"/>
-      Day:        <input type="text" name = "day" placeholder="24"/>
-      Year:       <input type="text" name = "year" value="2018" placeholder="2000"/>
+      First Name: <input type="text" name = "firstName" placeholder="Wind"/><br>
+      Last Name:  <input type="text" name = "lastName" placeholder="Storm"/><br>
+      Month:      <input type="text" name = "month" placeholder="3"/><br>
+      Day:        <input type="text" name = "day" placeholder="24"/><br>
+      Year:       <input type="text" name = "year" value="2018" placeholder="2000"/><br>
       <input type="submit" value="Submit">
+      <button type="button" (click)="addChef = false">Cancel</button>
     </form>
   </div>
- 
+</div>
+
+<div *ngIf="selectedChef" class="deletion">
+  <h2>Trying to remove {{ selectedChef.firstName }}  {{ selectedChef.lastName }}'s entry on {{selectedChef.month}}/{{selectedChef.day}}/{{selectedChef.year}}</h2>
+  <form>
+    Are you sure you want to remove it?
+    <input type="submit" value="Yes">
+    <button type="button" (click)="selectedChef = false">No</button>
+  </form>
 </div>
