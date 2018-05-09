@@ -11,7 +11,7 @@ namespace First_Project_Angular.Controllers
     [Route("api/Chef")]
     public class ChefController : Controller
     {
-        [HttpPost]
+        [HttpGet]
         public IActionResult Test() => Ok("Hello");
         
     }
