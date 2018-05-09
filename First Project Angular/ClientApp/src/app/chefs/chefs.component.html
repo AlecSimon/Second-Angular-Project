@@ -6,13 +6,13 @@
   </li>
 </ul>
 
-<h2><button type="button" (click)="addChef = true" (click)="selectedChef = false"> Add Entry</button></h2>
+<h2><button type="button" [class.selected]="addChef" (click)="addChef = true" (click)="selectedChef = false"> Add Entry</button></h2>
 
 <div *ngIf="addChef">
  
   <h2>Add a Chef</h2>
   <div>
-    <form action="./somewhere">
+    <form action="./api/Chef">
       First Name: <input type="text" name = "firstName" placeholder="Wind"/><br>
       Last Name:  <input type="text" name = "lastName" placeholder="Storm"/><br>
       Month:      <input type="text" name = "month" placeholder="3"/><br>
@@ -26,7 +26,7 @@
 
 <div *ngIf="selectedChef" class="deletion">
   <h2>Trying to remove {{ selectedChef.firstName }}  {{ selectedChef.lastName }}'s entry on {{selectedChef.month}}/{{selectedChef.day}}/{{selectedChef.year}}</h2>
-  <form>
+  <form action="./api/Chef">
     Are you sure you want to remove it?
     <input type="submit" value="Yes">
     <button type="button" (click)="selectedChef = false">No</button>
