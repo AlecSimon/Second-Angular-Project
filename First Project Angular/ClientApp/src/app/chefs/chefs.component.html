@@ -1,15 +1,24 @@
-<html>
-
-<h2>Current Signup Sheet</h2>
+<h2>Current Signup Sheet <button type="button">Add Entry</button></h2>
 <ul class="chefs" *ngFor="let chef of chefs">
   <li>
-    <span class="badge">{{chef.month}}/{{chef.day}}/{{chef.year}}</span> {{chef.firstName}} {{chef.lastName}}<button type="button"onclick="alert('html is hard lul')">Remove Entry</button>
+    <span class="badge">{{chef.month}}/{{chef.day}}/{{chef.year}}</span> {{chef.firstName}} {{chef.lastName}} <button type="button" [class.selected]="chef === selectedChef"
+    (click)="onSelect(chef)">Remove Entry</button>
   </li>
 </ul>
 
-<script>
-function functionA() {
-  window.print();
-}
-</script>
-</html>
+<div *ngIf="selectedChef">
+ 
+  <h2>{{ selectedChef.firstName }} {{ selectedChef.lastName }} Details</h2>
+  <div><span>id: </span>uwu</div>
+  <div>
+    <form action="./mock-chefs.ts">
+      First Name: <input type="text" name = "firstName" placeholder="Wind"/>
+      Last Name:  <input type="text" name = "lastName" placeholder="Storm"/>
+      Month:      <input type="text" name = "month" placeholder="3"/>
+      Day:        <input type="text" name = "day" placeholder="24"/>
+      Year:       <input type="text" name = "year" value="2018" placeholder="2000"/>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+ 
+</div>

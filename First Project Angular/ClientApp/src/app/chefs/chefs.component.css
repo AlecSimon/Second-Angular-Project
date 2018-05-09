@@ -6,10 +6,9 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 18.7em;
 }
 .chefs li {
-  cursor: pointer;
   position: relative;
   left: 0;
   background-color: #EEE;
@@ -17,15 +16,6 @@
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
-}
-.chefs li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
-}
-.chefs li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
 }
 .chefs .text {
   position: relative;
@@ -45,10 +35,26 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
-.chefs button {
+
+.chefs li button {
+  cursor: pointer;
+  position: fixed;
   border-color: black;
   background-color: #333333;
   color: white;
   font-size: small;
   border-radius: 4px 4px 4px 4px;
+  left: 15em;
+  transform: translate(0px, 2px);
+}
+button {
+  cursor: pointer;
+  border-color: black;
+  background-color: #333333;
+  color: white;
+  font-size: small;
+  border-radius: 4px 4px 4px 4px;
+}
+h2 button {
+  transform: translate(0px, -3px);
 }
