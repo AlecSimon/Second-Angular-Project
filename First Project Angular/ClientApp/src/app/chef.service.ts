@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Chef } from './chef';
-import { CHEFS } from './mock-chefs';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +9,12 @@ import { Observable, of } from 'rxjs';
 
 export class ChefService {
 
+  private chefsUrl = 'api/chefs';
+
   getChefs(): Observable<Chef[]> {
-    return of(CHEFS);
+    return this.http.get<Chef[]>(this.chefsUrl)
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 }

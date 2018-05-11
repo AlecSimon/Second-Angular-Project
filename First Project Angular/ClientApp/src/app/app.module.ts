@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ChefsComponent } from './chefs/chefs.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HttpModule } from '@angular/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +15,10 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
