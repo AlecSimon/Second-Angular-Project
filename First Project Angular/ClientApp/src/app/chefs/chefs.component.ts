@@ -30,5 +30,19 @@ export class ChefsComponent implements OnInit {
     this.selectedChef = chef;
   }
 
+  add(firstName: string, lastName: string, month: number, day: number, year: number): void {
+    firstName = firstName.trim()
+    lastName = firstName.trim()
+    if(!firstName) { return; }
+    if(!lastName) { return; }
+    this.chefService.addEntry({ firstName, lastName, month, day, year } as Chef)
+      .subscribe(chef => {this.chefs.push(chef);});
+
+  }
+
+  delete(chef: Chef): void {
+    this.chefs = this.chefs.filter(h => h !== chef);
+    this.chefService.deleteChef(chef).subscribe();
+  }
 
 }

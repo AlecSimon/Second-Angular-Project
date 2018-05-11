@@ -12,24 +12,24 @@
  
   <h2>Add a Chef</h2>
   <div>
-    <form action="./api/Chef">
-      First Name: <input type="text" name = "firstName" placeholder="Wind"/><br>
-      Last Name:  <input type="text" name = "lastName" placeholder="Storm"/><br>
-      Month:      <input type="text" name = "month" placeholder="3"/><br>
-      Day:        <input type="text" name = "day" placeholder="24"/><br>
-      Year:       <input type="text" name = "year" value="2018" placeholder="2000"/><br>
-      <input type="submit" value="Submit">
+    
+      First Name: <input #firstName type="text" placeholder="Wind"/><br>
+      Last Name:  <input #lastName type="text" placeholder="Storm"/><br>
+      Month:      <input #month type="text" placeholder="3"/><br>
+      Day:        <input #day type="text" placeholder="24"/><br>
+      Year:       <input #year type="text" value="2018" placeholder="2000"/><br>
+      <button (click)="add(firstName.value, lastName.value, month.value, day.value, year.value); firstName.value=''; lastName.value=''; month.value=''; day.value=''">Submit</button>
       <button type="button" (click)="addChef = false">Cancel</button>
-    </form>
+    
     <br><br><a href="http://a.co/62KMvcp">Better Solution</a>
   </div>
 </div>
 
 <div *ngIf="selectedChef" class="deletion">
   <h2>Trying to remove {{ selectedChef.firstName }}  {{ selectedChef.lastName }}'s entry on {{selectedChef.month}}/{{selectedChef.day}}/{{selectedChef.year}}</h2>
-  <form action="./api/Chef">
+  
     Are you sure you want to remove it?
-    <input type="submit" value="Yes">
+    <button type="button" (click)="delete(selectedChef)" (click)="selectedChef = false">Yes</button>
     <button type="button" (click)="selectedChef = false">No</button>
-  </form>
+  
 </div>

@@ -69,9 +69,7 @@ form button{
   border-color: black;
   background-color: #333333;
   color: white;
-  position: fixed;
-  left: 19.3em;
-  border-radius: 0px 4px 4px 0px;
+  border-radius: 4px 4px 4px 4px;
 }
 
 .deletion form input {
