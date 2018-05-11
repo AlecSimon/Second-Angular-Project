@@ -39,48 +39,33 @@ h2 {
   border-radius: 4px 0 0 4px;
 }
 
-.chefs li button {
+
+button{
   cursor: pointer;
-  position: fixed;
+  font-size: small;
   border-color: black;
   background-color: #333333;
   color: white;
-  font-size: small;
+}
+
+h4 button {
+  position: relative;
+  left: 14.4em;
+}
+
+.chefs li button {
+  position: fixed;
   border-radius: 4px 4px 4px 4px;
   left: 15em;
   transform: translate(0px, 2px);
 }
 
 h2 button {
-  cursor: pointer;
-  border-color: black;
-  background-color: #333333;
-  color: white;
-  font-size: small;
   border-radius: 4px 4px 4px 4px;
   transform: translate(5px, -3px);
 }
 
-form input {
+h4 input {
 position: fixed;
 left: 15em;
-}
-form button{
-  border-color: black;
-  background-color: #333333;
-  color: white;
-  border-radius: 4px 4px 4px 4px;
-}
-
-.deletion form input {
-  position: fixed;
-  left: 19em;
-  }
-.deletion form button{
-  border-color: black;
-  background-color: #333333;
-  color: white;
-  position: fixed;
-  left: 21.6em;
-  border-radius: 0px 4px 4px 0px;
 }
